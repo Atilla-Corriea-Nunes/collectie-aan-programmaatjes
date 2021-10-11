@@ -27,4 +27,4 @@ random.shuffle(middleoflist)
 random.shuffle(themissingones)
 first = themissingones[:3]
 finishedPassword = list(first) + list(middleoflist) + list(last)
-print(finishedPassword)
+print("".join(finishedPassword))

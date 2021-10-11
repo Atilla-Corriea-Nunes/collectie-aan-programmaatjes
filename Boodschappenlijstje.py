@@ -1,4 +1,3 @@
-import random
 shoppinglist = {}
 x = 0
 
