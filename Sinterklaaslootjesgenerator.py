@@ -2,6 +2,8 @@ import random
 namenlijst = []
 completedlist = []
 currentpos = 0
+x = 0
+alreadyused = ""
 
 def addToNamelist():
         if currentitem in namenlijst:
@@ -32,12 +34,21 @@ while True:
             currentperson = namenlijst[currentpos]
             while True:
                 currentlink = random.choice(namenlijst)
-                if currentlink in currentperson and str("heeft " + currentlink) in completedlist:
+                both = str(currentperson) + " heeft " +currentlink+ " als lootje gekregen!"
+                string=''.join([str(item) for item in completedlist])
+                if x == 0 and currentperson != currentlink:
+                    alreadyused = str(alreadyused) + " " + currentlink
+                    break
+                if x == 0:
+                    continue
+                elif currentperson == currentlink or currentlink in alreadyused:
                     continue
                 else:
+                    alreadyused = str(alreadyused) + " " + currentlink
                     break
-            both = str(currentperson) + " heeft " +currentlink+ " als lootje gekregen!"
+                
             completedlist.append(both)
             currentpos = int(currentpos) + 1
+            x = int(x) + 1
         print(completedlist)
         quit()
