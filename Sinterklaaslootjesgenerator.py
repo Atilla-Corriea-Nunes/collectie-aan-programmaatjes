@@ -3,7 +3,10 @@ namenlijst = []
 completedlist = []
 currentpos = 0
 x = 0
+namencounter = 0
 alreadyused = ""
+z = 0
+leave = ""
 
 def addToNamelist():
         if currentitem in namenlijst:
@@ -12,7 +15,6 @@ def addToNamelist():
             namenlijst.append(currentitem)
             return namenlijst
 
-
 while True:
     currentitem = input("Welke naam wilt u toevoegen? ")
     if currentitem.lower() == "quit":
@@ -20,8 +22,13 @@ while True:
     addToNamelist()    
 
     while True:
+        z = int(z) + 1
+        if z < 2:
+           break
         leave = input("Wilt u nog een naam toevoegen? (Y/N) ")
+
         if (leave.lower() == "y" or leave.lower() == "n"):
+            
             break
         else:
             print("ik snapte dat niet, kies tussen y en n")
