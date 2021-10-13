@@ -1,5 +1,3 @@
-from collections import Counter
-from os import _AddedDllDirectory, altsep
 import random
 i = 0
 counter = {}
